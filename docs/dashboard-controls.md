@@ -1,6 +1,6 @@
 # Dashboard design and controls
 
-The four reports reuse their existing imported data, relationships, SQL outputs and DAX measures. The report layer has been redesigned; the original data-model bytes are preserved in each prepared PBIX. Backups are in `backups/`.
+The four reports reuse their existing imported data, relationships, SQL outputs and DAX measures. The report layer has been redesigned without refreshing data or editing the existing model or DAX. Power BI Desktop can reserialize the model stream during a native save. Backups are in `backups/`.
 
 ## Start with the theme
 
