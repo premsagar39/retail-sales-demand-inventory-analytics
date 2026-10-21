@@ -245,6 +245,22 @@
             "formatString": "#,0",
             "displayFolder": "Demand Analytics",
             "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout Signed Error",
+            "expression": "[Holdout Forecast]-[Holdout Actual]",
+            "formatString": "#,0;-#,0",
+            "displayFolder": "Comparisons",
+            "description": "Selected-model fold-3 forecast minus actual, respecting date and family filters.",
+            "lineageTag": "4d3c2062-6a1a-573d-9617-7bd23b43702f"
+          },
+          {
+            "name": "Holdout Bias",
+            "expression": "DIVIDE([Holdout Signed Error],[Holdout Actual])",
+            "formatString": "0.0%;-0.0%",
+            "displayFolder": "Comparisons",
+            "description": "Signed error / actual. Positive means overforecasting; zero actual gives blank. Different from WAPE.",
+            "lineageTag": "41527307-edef-5762-80bd-871fa24991a6"
           }
         ]
       },

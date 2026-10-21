@@ -1,6 +1,6 @@
 {
   "engine": "MySQL 8",
-  "queries_executed": 20,
+  "queries_executed": 21,
   "all_kpi_reconciliations_pass": true,
   "checks": {
     "source_rows": {
@@ -23,5 +23,6 @@
       "mysql": 1073644952.2030684,
       "matches": true
     }
-  }
+  },
+  "Q21_independent_reconciliation": "Pass"
 }

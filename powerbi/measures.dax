@@ -1,47 +1,77 @@
-Recorded Sales = SUM(Sales[sales])
+Recorded Sales =
+SUM(Sales[sales])
 
-Sales Rows = COUNTROWS(Sales)
+Sales Rows =
+COUNTROWS(Sales)
 
-Stores Observed = DISTINCTCOUNT(Sales[store_nbr])
+Stores Observed =
+DISTINCTCOUNT(Sales[store_nbr])
 
-Families Observed = DISTINCTCOUNT(Sales[family])
+Families Observed =
+DISTINCTCOUNT(Sales[family])
 
-Observed Sales Days = DISTINCTCOUNT(Sales[date])
+Observed Sales Days =
+DISTINCTCOUNT(Sales[date])
 
-Sales per Observed Day = DIVIDE([Recorded Sales],[Observed Sales Days])
+Sales per Observed Day =
+DIVIDE([Recorded Sales],[Observed Sales Days])
 
-Promotion Items = SUM(Sales[onpromotion])
+Promotion Items =
+SUM(Sales[onpromotion])
 
-Promoted Row Share = DIVIDE(CALCULATE([Sales Rows],Sales[onpromotion]>0),[Sales Rows])
+Promoted Row Share =
+DIVIDE(CALCULATE([Sales Rows],Sales[onpromotion]>0),[Sales Rows])
 
-Zero Recorded Sales Share = DIVIDE(CALCULATE([Sales Rows],Sales[sales]=0),[Sales Rows])
+Zero Recorded Sales Share =
+DIVIDE(CALCULATE([Sales Rows],Sales[sales]=0),[Sales Rows])
 
-Store Transactions = SUM(Transactions[transactions])
+Store Transactions =
+SUM(Transactions[transactions])
 
-Selected Forecast Model = MAX(Selection[SelectedModel])
+Selected Forecast Model =
+MAX(Selection[SelectedModel])
 
-Holdout Actual = VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[sales]),Forecasts[fold]=3,Forecasts[method]=M)
+Holdout Actual =
+VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[sales]),Forecasts[fold]=3,Forecasts[method]=M)
 
-Holdout Forecast = VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[prediction]),Forecasts[fold]=3,Forecasts[method]=M)
+Holdout Forecast =
+VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[prediction]),Forecasts[fold]=3,Forecasts[method]=M)
 
-Holdout Absolute Error = VAR M=[Selected Forecast Model] RETURN CALCULATE(SUMX(Forecasts,ABS(Forecasts[sales]-Forecasts[prediction])),Forecasts[fold]=3,Forecasts[method]=M)
+Holdout Absolute Error =
+VAR M=[Selected Forecast Model] RETURN CALCULATE(SUMX(Forecasts,ABS(Forecasts[sales]-Forecasts[prediction])),Forecasts[fold]=3,Forecasts[method]=M)
 
-Holdout WAPE = DIVIDE([Holdout Absolute Error],[Holdout Actual])
+Holdout WAPE =
+DIVIDE([Holdout Absolute Error],[Holdout Actual])
 
-Holdout Macro Family WAPE = AVERAGEX(VALUES(Families[family]),[Holdout WAPE])
+Holdout Macro Family WAPE =
+AVERAGEX(VALUES(Families[family]),[Holdout WAPE])
 
-Holdout MAE = VAR M=[Selected Forecast Model] RETURN DIVIDE([Holdout Absolute Error],CALCULATE(COUNTROWS(Forecasts),Forecasts[fold]=3,Forecasts[method]=M))
+Holdout MAE =
+VAR M=[Selected Forecast Model] RETURN DIVIDE([Holdout Absolute Error],CALCULATE(COUNTROWS(Forecasts),Forecasts[fold]=3,Forecasts[method]=M))
 
-Model WAPE Full Portfolio = CALCULATE(MAX(Scores[WAPE]),Scores[fold]=3)
+Model WAPE Full Portfolio =
+CALCULATE(MAX(Scores[WAPE]),Scores[fold]=3)
 
-Future Forecast = SUM(Future[prediction])
+Future Forecast =
+SUM(Future[prediction])
 
-Scenario Z = SELECTEDVALUE(Inventory[service_z],1.65)
+Scenario Z =
+SELECTEDVALUE(Inventory[service_z],1.65)
 
-Scenario Fill Rate = VAR Z=[Scenario Z] RETURN DIVIDE(CALCULATE(SUM(Inventory[fulfilled]),Inventory[service_z]=Z),CALCULATE(SUM(Inventory[demand]),Inventory[service_z]=Z))
+Scenario Fill Rate =
+VAR Z=[Scenario Z] RETURN DIVIDE(CALCULATE(SUM(Inventory[fulfilled]),Inventory[service_z]=Z),CALCULATE(SUM(Inventory[demand]),Inventory[service_z]=Z))
 
-Scenario Lost Sales = VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[lost_sales_units]),Inventory[service_z]=Z)
+Scenario Lost Sales =
+VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[lost_sales_units]),Inventory[service_z]=Z)
 
-Scenario Mean Stock = VAR Z=[Scenario Z] RETURN CALCULATE(AVERAGE(Inventory[ending_stock]),Inventory[service_z]=Z)
+Scenario Mean Stock =
+VAR Z=[Scenario Z] RETURN CALCULATE(AVERAGE(Inventory[ending_stock]),Inventory[service_z]=Z)
 
-Assumed Holding Cost = VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[holding_cost_assumed]),Inventory[service_z]=Z)
+Assumed Holding Cost =
+VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[holding_cost_assumed]),Inventory[service_z]=Z)
+
+Holdout Signed Error =
+[Holdout Forecast]-[Holdout Actual]
+
+Holdout Bias =
+DIVIDE([Holdout Signed Error],[Holdout Actual])

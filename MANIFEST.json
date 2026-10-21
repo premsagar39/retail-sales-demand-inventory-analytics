@@ -15,9 +15,24 @@
     "sha256": "83ef78c3d774258c495f5eb931203e4af9e1376261281264b722177ab9eaa6a3"
   },
   {
+    "path": "LICENSE",
+    "bytes": 1176,
+    "sha256": "e99ee86dbf4795af594bc94ef4529bb3d18141bfd9a15fe479728a4775668aa6"
+  },
+  {
+    "path": "README.md",
+    "bytes": 6691,
+    "sha256": "977b779fff2547ec31ce27237bfced8d12edc073d0d52580047424df8f27f571"
+  },
+  {
     "path": "data/exports/backtest_predictions.csv",
     "bytes": 393344,
     "sha256": "09ddda49140f83eabb6689ab9e72f1e4feac6f990a4d75dabd4fe9bbe638704f"
+  },
+  {
+    "path": "data/exports/comparison_review.csv",
+    "bytes": 2668,
+    "sha256": "1046e85ebe4120c3418e613889813ed95617ad139339ce48213686e45e8d15fc"
   },
   {
     "path": "data/exports/daily_family_sales.csv",
@@ -90,11 +105,6 @@
     "sha256": "89077458d86358c604450cea4501e7fd7e0f580da62a9f648ed58d17731ea4ad"
   },
   {
-    "path": "LICENSE",
-    "bytes": 1176,
-    "sha256": "e99ee86dbf4795af594bc94ef4529bb3d18141bfd9a15fe479728a4775668aa6"
-  },
-  {
     "path": "notebooks/01_analysis.ipynb",
     "bytes": 8729,
     "sha256": "7d8c117a36de3d4a2a7f367d1da2227e91d94d4aa49ce9fe8d217256d0ccb057"
@@ -106,13 +116,8 @@
   },
   {
     "path": "powerbi/MEASURE_DEFINITIONS.md",
-    "bytes": 3072,
-    "sha256": "751b6f58606dd0082c578cafb5c1050dc9705c8ed031e3bd598f8457a0d47d49"
-  },
-  {
-    "path": "powerbi/measures.dax",
-    "bytes": 2102,
-    "sha256": "647cd1435c1908fafa1c9f0cf200360911dff6ed038efbb6c6c059685a8205f5"
+    "bytes": 3422,
+    "sha256": "59ea36938cf82945a62c2da01d7d3eb16a04dddbc695b21c46acfc92203627f9"
   },
   {
     "path": "powerbi/OPEN_REPORT.md",
@@ -120,9 +125,44 @@
     "sha256": "a950cbc8a61865abf04b00055b017bafaa88fef0d032bfad9d15d184d2a4c4f9"
   },
   {
-    "path": "powerbi/Retail_Demand_Inventory.pbip",
-    "bytes": 195,
-    "sha256": "68fcc04e5a9e6ac21c3bca4d4650fe0b929c8c58f65021fb08ad4e7bb0ee0ba1"
+    "path": "powerbi/Retail_Demand_Inventory.Report/StaticResources/RegisteredResources/FocusedTheme.json",
+    "bytes": 590,
+    "sha256": "b0b3ee19ed741d9a0dabb5d8720a8c8fce5325881d651838d6bdd59d43fc84d5"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition.pbir",
+    "bytes": 137,
+    "sha256": "1358db02c6977d1b2d0f7af60ec63c4487de77766f27bfbcdea7787b27edaf6c"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/page.json",
+    "bytes": 773,
+    "sha256": "c557bb8cc434cd9f4cd1faefe2254f65763461337d3a2e0d2c3c8cbe5aa9e1c1"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/visuals/5537efc036dc5cf4b561/visual.json",
+    "bytes": 1465,
+    "sha256": "836d318fd8545164f3cc4ae95978c7c1550b4680cb55c573d207a0f2df78dd77"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/visuals/63072514e67b51e7841f/visual.json",
+    "bytes": 3446,
+    "sha256": "d59fdd4f0287719994b6d8a865f57a9702a65a10253d0c99422a39d7470ae592"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/visuals/66b86d83b9075e3aaa39/visual.json",
+    "bytes": 5903,
+    "sha256": "ff73ba44a2859d71ca413e6fec1dd7ea216c65f76e60b7c54612a9a15f4c6f15"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/visuals/8a6559c3726c584da836/visual.json",
+    "bytes": 1607,
+    "sha256": "3f7b8bbd43b925820cc65dfb23f266b102485a9b6171ce4822c92b8ca433f332"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/comparison/visuals/ca66543ac8d75b8e9f09/visual.json",
+    "bytes": 5432,
+    "sha256": "24ed21fbef82727c50d1c93ad78e4f835f332a5b14a3b8a7cf549063deca5ed5"
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/page.json",
@@ -381,23 +421,18 @@
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/pages.json",
-    "bytes": 221,
-    "sha256": "01eeadf1054942b8c93ef68e216b181a28318a8d173d4eda4c5ec7375fb1a600"
+    "bytes": 248,
+    "sha256": "67350b9752e452ac11c93a83375a495ec2d06376714343485642b43d01bf3323"
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.Report/definition/report.json",
-    "bytes": 146,
-    "sha256": "9070c850780e1e045e83722f00932c32aafbc46799d5313b45d6f9f8ce411e6b"
+    "bytes": 650,
+    "sha256": "246fddd99dce8427011c972727ddf466dfd657a25ae0ee6601ba5956f0df8614"
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.Report/definition/version.json",
     "bytes": 152,
     "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7"
-  },
-  {
-    "path": "powerbi/Retail_Demand_Inventory.Report/definition.pbir",
-    "bytes": 137,
-    "sha256": "1358db02c6977d1b2d0f7af60ec63c4487de77766f27bfbcdea7787b27edaf6c"
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.SemanticModel/definition.pbism",
@@ -406,8 +441,23 @@
   },
   {
     "path": "powerbi/Retail_Demand_Inventory.SemanticModel/model.bim",
-    "bytes": 28638,
-    "sha256": "c7cedb97ba1596ecdea514ea1254040fa6df7a65856cce94a41786deeaad31d2"
+    "bytes": 29453,
+    "sha256": "f60f61f3aa04e12e5658afe440c41d6160f9c2230f780b98124b8467adef4d57"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.pbip",
+    "bytes": 195,
+    "sha256": "68fcc04e5a9e6ac21c3bca4d4650fe0b929c8c58f65021fb08ad4e7bb0ee0ba1"
+  },
+  {
+    "path": "powerbi/measures.dax",
+    "bytes": 2258,
+    "sha256": "3b8cbbc9e648377cbaada78f9d4a130e6bcf69b63b3eb7ec7e7f60d84a6a5e5f"
+  },
+  {
+    "path": "powerbi/theme.json",
+    "bytes": 590,
+    "sha256": "b0b3ee19ed741d9a0dabb5d8720a8c8fce5325881d651838d6bdd59d43fc84d5"
   },
   {
     "path": "pytest.ini",
@@ -415,14 +465,19 @@
     "sha256": "7791f8a30002e1894c931553bec9826e7d7db30bc62b235c18909648837c420d"
   },
   {
-    "path": "README.md",
-    "bytes": 5909,
-    "sha256": "0dfe6efebf55cfe291c959a5d2e627efed5a5876258f2f18115296d76ae7e744"
-  },
-  {
     "path": "reports/BUSINESS_FINDINGS.md",
     "bytes": 1405,
     "sha256": "7ac2a3d13e49fdd4ff829510d095722411a38ace30a568c560576616340610c4"
+  },
+  {
+    "path": "reports/COMPARISON_VALIDATION.md",
+    "bytes": 421,
+    "sha256": "cfe034fa945f703f4d947e133bf419ef1823a3d9d8805492317d29e17a4dc3b8"
+  },
+  {
+    "path": "reports/Comparison_Dashboard.html",
+    "bytes": 10658,
+    "sha256": "6fee69db08f24cfa78a186bdec8563165b2bf942950452ce99021a6bc1f3cd4d"
   },
   {
     "path": "reports/DATA_DICTIONARY.md",
@@ -440,9 +495,44 @@
     "sha256": "788a1d8c20a273dcacbafee1d245b43659a9848850fe2df34db1373e42c4ef1f"
   },
   {
+    "path": "reports/INTERVIEW_GUIDE.md",
+    "bytes": 1148,
+    "sha256": "21139f0322f361e1f11660bd3471db1d9e009bd70e4d8b0a6892ecd599b957a2"
+  },
+  {
+    "path": "reports/Interactive_Dashboard.html",
+    "bytes": 4876497,
+    "sha256": "216b3d3a933c69b125e8c1a5a405c7001a0d37d21fcd0f0159e39ae2725915a3"
+  },
+  {
+    "path": "reports/PUBLICATION_CHECKLIST.md",
+    "bytes": 937,
+    "sha256": "4f106e9615e8f334de3771e4b13a5ffa634fc172377a30947ff8d675ec4db2c8"
+  },
+  {
+    "path": "reports/QA_STATUS.md",
+    "bytes": 1804,
+    "sha256": "6af560cfc82cb0d424fd1bb07791bf6a033a874ca04d7e0e60162d1b07009b7d"
+  },
+  {
+    "path": "reports/comparison_native_validation.json",
+    "bytes": 377,
+    "sha256": "1363d9d1a9e5a435d6b8577162842d8efbf7bf51340459bb2c36bc9b8ece3237"
+  },
+  {
+    "path": "reports/comparison_validation.json",
+    "bytes": 258,
+    "sha256": "f083d0f06f94822c9133a9e3b14b88fd6d96956b2c7612c71d455471ea7e303b"
+  },
+  {
     "path": "reports/data_status.json",
     "bytes": 1275,
     "sha256": "0bbb18da86c887433d25eabbdbefa2795fcb66cfff6eeafc0f8b2c0d6ee35bad"
+  },
+  {
+    "path": "reports/figures/comparison_review.png",
+    "bytes": 97802,
+    "sha256": "9a4a9672dc741d026b3eca0a574dcf23821b4a15b7aaa6c12a5a6a2cb17819c6"
   },
   {
     "path": "reports/figures/native_forecast.jpg",
@@ -460,34 +550,14 @@
     "sha256": "decae3a6ec24142f6580828e50750d73379f371d2b08bb59c0da8a7a6f7ddd6d"
   },
   {
-    "path": "reports/Interactive_Dashboard.html",
-    "bytes": 4876497,
-    "sha256": "216b3d3a933c69b125e8c1a5a405c7001a0d37d21fcd0f0159e39ae2725915a3"
-  },
-  {
-    "path": "reports/INTERVIEW_GUIDE.md",
-    "bytes": 1148,
-    "sha256": "21139f0322f361e1f11660bd3471db1d9e009bd70e4d8b0a6892ecd599b957a2"
-  },
-  {
     "path": "reports/mysql_validation.json",
-    "bytes": 576,
-    "sha256": "4bfe63a8a529d27fa250fd231c2e93d0e0d2edf0e4d160b03be6851e27d8b72c"
+    "bytes": 621,
+    "sha256": "e2d17a899ac9f1d492c5472405cbb59a47e3fc1325a190c648741cba98d0bebb"
   },
   {
     "path": "reports/native_validation.json",
     "bytes": 424,
     "sha256": "dbcb55ea25d70a12a389792807a5436cf0533b7e46479a21aff7e290a2b1a9e8"
-  },
-  {
-    "path": "reports/PUBLICATION_CHECKLIST.md",
-    "bytes": 937,
-    "sha256": "4f106e9615e8f334de3771e4b13a5ffa634fc172377a30947ff8d675ec4db2c8"
-  },
-  {
-    "path": "reports/QA_STATUS.md",
-    "bytes": 1593,
-    "sha256": "4aca4ed5853296965e84f96ae5fd20caa5467cca3c888b3598627ffe178c8b56"
   },
   {
     "path": "reports/result_validation.json",
@@ -497,12 +567,12 @@
   {
     "path": "reports/schema_validation.json",
     "bytes": 70,
-    "sha256": "461e3314f70e329b6b0abc15858175879bf859e2cf969fd720251d9926dfd93e"
+    "sha256": "3a3657fdc174f9ba55dc0c10067f0c001aa2541b569a88208d3eb4a687ffffb7"
   },
   {
     "path": "reports/sql_execution.json",
-    "bytes": 2503,
-    "sha256": "6909b635a1a2c3c958474ab8a7d718f3b1dd4d21b8d823f6c0ef277994a0f111"
+    "bytes": 2673,
+    "sha256": "b135f5bac53b9a8ecdc3c0a40396bae643b9dc38f4ec18a85b164f62c6feccfb"
   },
   {
     "path": "reports/sql_results/q01.csv",
@@ -605,6 +675,11 @@
     "sha256": "c14d9d016b70399cf3fb951b83d3a7bc7ddec377ea707096c338a05ef8d9f134"
   },
   {
+    "path": "reports/sql_results/q21.csv",
+    "bytes": 1723,
+    "sha256": "208189a7d46c14c897b9488f760f8b94ad7461d5bdb7bfc225c032ea34d99be6"
+  },
+  {
     "path": "reports/sql_validation.json",
     "bytes": 576,
     "sha256": "4bfe63a8a529d27fa250fd231c2e93d0e0d2edf0e4d160b03be6851e27d8b72c"
@@ -626,8 +701,8 @@
   },
   {
     "path": "sql/analysis_queries.sql",
-    "bytes": 4335,
-    "sha256": "f1cb68a950a6fe638ea9f8d533758384415e9c3e4061fabf662a867e529f6793"
+    "bytes": 4763,
+    "sha256": "2bbfd218f759a773579d2a88635a01487dedf182637a5c0c0867c943147d341c"
   },
   {
     "path": "sql/schema.sql",
@@ -638,6 +713,11 @@
     "path": "src/__init__.py",
     "bytes": 0,
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "src/comparison_analysis.py",
+    "bytes": 5423,
+    "sha256": "d7b76fbb121ab52103aef1d85bfdd18778bc4ce1e58b31a591cb8616be38c730"
   },
   {
     "path": "src/database.py",

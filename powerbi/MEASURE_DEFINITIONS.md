@@ -145,3 +145,19 @@ VAR Z=[Scenario Z] RETURN CALCULATE(AVERAGE(Inventory[ending_stock]),Inventory[s
 ```dax
 VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[holding_cost_assumed]),Inventory[service_z]=Z)
 ```
+
+## Holdout Signed Error
+
+Selected-model fold-3 forecast minus actual, respecting date and family filters.
+
+```dax
+[Holdout Forecast]-[Holdout Actual]
+```
+
+## Holdout Bias
+
+Signed error / actual. Positive means overforecasting; zero actual gives blank. Different from WAPE.
+
+```dax
+DIVIDE([Holdout Signed Error],[Holdout Actual])
+```

@@ -1,0 +1,8 @@
+{
+  "sql_query": "Q21",
+  "engine": "MySQL 8.0.46",
+  "rows": 33,
+  "independent_python_reconciliation": "Pass",
+  "new_measure_count": 2,
+  "scope": "Comparison calculations independently checked; native DAX visual verification recorded separately"
+}

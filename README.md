@@ -28,7 +28,7 @@ The pooled improvement is larger than the macro-family improvement. Small catego
 - Does a recursive model beat simple baselines on a future block?
 - How does an assumed safety factor change service and stock in a transparent scenario?
 
-The project includes 20 MySQL business queries, Python cleaning and validation, an executed notebook, an offline interactive HTML dashboard, four Power BI pages and 24 DAX measures. Open `reports/Interactive_Dashboard.html` for the browser report or `powerbi/Retail_Demand_Inventory.pbip` for editable Power BI source. Native refresh status is recorded in `reports/QA_STATUS.md`.
+The project includes 21 MySQL business queries, Python cleaning and validation, an executed notebook, an offline interactive HTML dashboard, five Power BI pages and 26 DAX measures. Open `reports/Interactive_Dashboard.html` for the browser report or `powerbi/Retail_Demand_Inventory.pbip` for editable Power BI source. Native refresh status is recorded in `reports/QA_STATUS.md`.
 
 ## Reproduce
 
@@ -38,6 +38,7 @@ Use Python 3.12 and the versions in `requirements-tested.txt`.
 pip install -r requirements.txt
 python src/pipeline.py --source-dir PATH_TO_FAVORITA_FILES
 python src/reporting.py
+python src/comparison_analysis.py
 python -m pytest tests -q
 ```
 
@@ -66,3 +67,13 @@ For Power BI, set `DataRoot` to your local `demand/data/` folder with a trailing
 - `reports/mysql_validation.json`: independent reconciliation.
 - `powerbi/MEASURE_DEFINITIONS.md`: DAX scope and denominators.
 - `notebooks/01_analysis.ipynb`: executed review of generated results.
+
+## Comparison view
+
+![Comparison overview](reports/figures/comparison_review.png)
+
+[Open the comparison dashboard](reports/Comparison_Dashboard.html) after downloading the repository; these comparison charts require an internet connection for Plotly.
+
+Forecast error review adds a focused review page with two contextual measures, a comparison table, chart tooltips and a project-specific theme. Final holdout: 31 Jul-15 Aug 2017; selected model only. Positive bias means overforecasting. Percentages use recorded quantities; no future actuals enter training. SQL Q21 provides the related aggregate analysis. See [enhancement checks](reports/COMPARISON_VALIDATION.md).
+
+Current report: **5 pages, 26 DAX measures and 21 SQL analyses**.

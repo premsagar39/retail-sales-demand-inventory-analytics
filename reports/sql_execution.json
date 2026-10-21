@@ -166,5 +166,15 @@
       "DailyStd",
       "CoefficientVariation"
     ]
+  },
+  "Q21": {
+    "rows": 33,
+    "columns": [
+      "family",
+      "HoldoutActual",
+      "ObservedDays",
+      "QuantityShare",
+      "QuantityRank"
+    ]
   }
 }

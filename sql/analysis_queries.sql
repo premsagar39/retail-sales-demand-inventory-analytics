@@ -57,3 +57,12 @@ SELECT id,date,store_nbr,family,sales,onpromotion FROM sales ORDER BY sales DESC
 
 -- Q20: Family variability, not a calibrated forecast
 WITH d AS (SELECT family,date,SUM(sales) Sales FROM sales GROUP BY family,date) SELECT family,AVG(Sales) MeanDailySales,STDDEV_SAMP(Sales) DailyStd,STDDEV_SAMP(Sales)/NULLIF(AVG(Sales),0) CoefficientVariation FROM d GROUP BY family;
+
+-- Q21: Family contribution to actual sales in the untouched final holdout
+WITH f AS (
+ SELECT family,SUM(sales) HoldoutActual,COUNT(DISTINCT date) ObservedDays
+ FROM sales WHERE date BETWEEN '2017-07-31' AND '2017-08-15' GROUP BY family
+)
+SELECT *,HoldoutActual/NULLIF(SUM(HoldoutActual) OVER(),0) QuantityShare,
+ DENSE_RANK() OVER(ORDER BY HoldoutActual DESC) QuantityRank
+FROM f ORDER BY HoldoutActual DESC,family;

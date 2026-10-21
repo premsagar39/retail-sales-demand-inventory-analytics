@@ -1,0 +1,31 @@
+{
+  "name": "Retail_Demand_Inventory Theme",
+  "dataColors": [
+    "#216EAF",
+    "#1C344C",
+    "#DB9147",
+    "#44A698",
+    "#A2B8D0",
+    "#9675B5"
+  ],
+  "background": "#F3F6FA",
+  "foreground": "#17324D",
+  "tableAccent": "#216EAF",
+  "good": "#2B8C78",
+  "neutral": "#D8A840",
+  "bad": "#BC5B55",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI",
+      "color": "#17324D"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#52687E"
+    },
+    "callout": {
+      "fontFace": "Segoe UI",
+      "color": "#216EAF"
+    }
+  }
+}
