@@ -5,7 +5,9 @@
     "p2",
     "p3",
     "p4",
-    "comparison"
+    "comparison",
+    "detail",
+    "tooltip"
   ],
   "activePageName": "p1"
 }

@@ -1,0 +1,33 @@
+{
+  "name": "Retail Demand Forecasting Dark",
+  "dataColors": [
+    "#06B6D4",
+    "#10B981",
+    "#F59E0B",
+    "#3B82F6",
+    "#0B1120",
+    "#9AAEC7",
+    "#172036",
+    "#E5EDF7"
+  ],
+  "background": "#0B1120",
+  "foreground": "#E5EDF7",
+  "tableAccent": "#06B6D4",
+  "good": "#10B981",
+  "neutral": "#F59E0B",
+  "bad": "#EF4444",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#E5EDF7"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "color": "#9AAEC7"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "color": "#06B6D4"
+    }
+  }
+}

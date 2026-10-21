@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "tooltip",
+  "displayName": "Context Tooltip",
+  "displayOption": "FitToPage",
+  "width": 600,
+  "height": 370,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 6,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageInformation": [
+      {
+        "properties": {
+          "pageInformationType": {
+            "expr": {
+              "Literal": {
+                "Value": "'Tooltip'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "type": "Tooltip",
+  "visibility": "HiddenInViewMode",
+  "pageBinding": {
+    "name": "TooltipContext",
+    "type": "Tooltip",
+    "acceptsFilterContext": "Default",
+    "parameters": []
+  }
+}

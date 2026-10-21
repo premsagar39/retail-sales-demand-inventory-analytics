@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "detail",
+  "displayName": "Family Details",
+  "displayOption": "FitToPage",
+  "width": 1440,
+  "height": 900,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 6,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "type": "Drillthrough",
+  "visibility": "HiddenInViewMode",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8ac0f8b8d90050d79235",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Families"
+              }
+            },
+            "Property": "family"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "DrillContext",
+    "type": "Drillthrough",
+    "acceptsFilterContext": "Default",
+    "parameters": [
+      {
+        "name": "ba7578f382405b71a289",
+        "boundFilter": "8ac0f8b8d90050d79235",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Families"
+              }
+            },
+            "Property": "family"
+          }
+        }
+      }
+    ]
+  }
+}

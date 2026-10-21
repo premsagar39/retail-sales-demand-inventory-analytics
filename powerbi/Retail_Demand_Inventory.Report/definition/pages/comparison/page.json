@@ -13,8 +13,9 @@
             "solid": {
               "color": {
                 "expr": {
-                  "Literal": {
-                    "Value": "'#F3F6FA'"
+                  "ThemeDataColor": {
+                    "ColorId": 6,
+                    "Percent": 0
                   }
                 }
               }
@@ -23,12 +24,19 @@
           "transparency": {
             "expr": {
               "Literal": {
-                "Value": "0"
+                "Value": "0D"
               }
             }
           }
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "ca66543ac8d75b8e9f09",
+      "target": "66b86d83b9075e3aaa39",
+      "type": "DataFilter"
+    }
+  ]
 }
