@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Service factor versus fill rate'"
+                  "Value": "'Service Factor vs Fill Rate'"
                 }
               }
             },

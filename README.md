@@ -1,4 +1,4 @@
-# Retail Demand Forecasting and Inventory Analytics
+# Retail Demand Forecasting
 
 This case study compares forecasts of recorded grocery sales on future time blocks, then uses the forecasts in an illustrative inventory scenario. The source contains **3,000,888 sales rows**, **54 stores**, **33 product families** and **1,684 observed dates** from January 2013 to August 2017.
 
@@ -77,3 +77,5 @@ For Power BI, set `DataRoot` to your local `demand/data/` folder with a trailing
 Forecast error review adds a focused review page with two contextual measures, a comparison table, chart tooltips and a project-specific theme. Final holdout: 31 Jul-15 Aug 2017; selected model only. Positive bias means overforecasting. Percentages use recorded quantities; no future actuals enter training. SQL Q21 provides the related aggregate analysis. See [enhancement checks](reports/COMPARISON_VALIDATION.md).
 
 Current report: **5 pages, 26 DAX measures and 21 SQL analyses**.
+
+[Report notes](powerbi/REPORT_NOTES.md) contain the date, scope and interpretation details behind the visuals.

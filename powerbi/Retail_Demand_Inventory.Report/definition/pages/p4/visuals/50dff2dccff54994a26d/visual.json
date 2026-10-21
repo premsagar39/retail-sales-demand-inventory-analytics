@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Daily lost sales under selected scenario'"
+                  "Value": "'Scenario Lost Sales by Day'"
                 }
               }
             },

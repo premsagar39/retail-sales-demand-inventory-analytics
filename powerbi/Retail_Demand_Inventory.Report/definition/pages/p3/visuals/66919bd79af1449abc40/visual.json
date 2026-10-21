@@ -48,7 +48,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "FORECAST EVALUATION",
+                    "value": "Forecast Performance",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "24pt",

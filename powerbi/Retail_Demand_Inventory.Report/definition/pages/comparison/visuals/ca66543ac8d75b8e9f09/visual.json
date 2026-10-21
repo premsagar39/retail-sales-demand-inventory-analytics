@@ -102,7 +102,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Holdout bias by family'"
+                  "Value": "'Holdout Bias by Family'"
                 }
               }
             },

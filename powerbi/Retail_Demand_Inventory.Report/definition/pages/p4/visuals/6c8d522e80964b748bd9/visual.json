@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Service factor versus average family-day stock'"
+                  "Value": "'Service Factor vs Average Stock'"
                 }
               }
             },

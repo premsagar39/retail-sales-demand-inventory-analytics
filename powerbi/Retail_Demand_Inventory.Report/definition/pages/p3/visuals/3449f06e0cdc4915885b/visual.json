@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Future forecast: selected model, no actuals yet'"
+                  "Value": "'Forward Forecast'"
                 }
               }
             },

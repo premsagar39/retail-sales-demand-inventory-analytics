@@ -86,7 +86,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Holdout WAPE: full portfolio by model'"
+                  "Value": "'Holdout WAPE by Model'"
                 }
               }
             },

@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "p2",
-  "displayName": "Promotions and seasonality",
+  "displayName": "Promotions & Seasonality",
   "displayOption": "FitToPage",
   "width": 1440,
   "height": 900,

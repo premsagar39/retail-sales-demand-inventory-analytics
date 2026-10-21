@@ -101,7 +101,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Final holdout actual versus recursive forecast'"
+                  "Value": "'Holdout Actual vs Forecast'"
                 }
               }
             },

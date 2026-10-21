@@ -124,7 +124,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Family error diagnostics - selected model, final holdout'"
+                  "Value": "'Holdout Errors by Family'"
                 }
               }
             },
