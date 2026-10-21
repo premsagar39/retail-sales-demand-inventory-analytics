@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "75c82cdbd5d45265a92c",
   "position": {
-    "x": 1110,
-    "y": 104,
-    "width": 298,
-    "height": 44,
+    "x": 1122,
+    "y": 110,
+    "width": 278,
+    "height": 34,
     "z": 12000,
     "tabOrder": 100
   },
@@ -178,7 +178,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0F172A'"
+                      "Value": "'#155E75'"
                     }
                   }
                 }
@@ -195,9 +195,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#0891B2'"
                     }
                   }
                 }
@@ -235,7 +234,7 @@
             "roundEdge": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             }
@@ -249,6 +248,13 @@
                   "Value": "'rectangleRounded'"
                 }
               }
+            },
+            "roundEdge": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
             }
           },
           "selector": {
@@ -259,5 +265,5 @@
     }
   },
   "howCreated": "InsertVisualButton",
-  "isHidden": true
+  "isHidden": false
 }

@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "66b86d83b9075e3aaa39",
   "position": {
-    "x": 808.75,
-    "y": 186.625,
-    "width": 552.5,
-    "height": 577.5,
+    "x": 408,
+    "y": 112,
+    "width": 678,
+    "height": 698,
     "z": 102,
     "tabOrder": 102
   },
@@ -44,7 +44,7 @@
               },
               "queryRef": "Sales.Holdout Actual",
               "nativeQueryRef": "Holdout Actual",
-              "displayName": "Holdout Actual"
+              "displayName": "Actual"
             },
             {
               "field": {
@@ -59,7 +59,7 @@
               },
               "queryRef": "Sales.Holdout Forecast",
               "nativeQueryRef": "Holdout Forecast",
-              "displayName": "Holdout Forecast"
+              "displayName": "Forecast"
             },
             {
               "field": {
@@ -74,7 +74,7 @@
               },
               "queryRef": "Sales.Holdout Signed Error",
               "nativeQueryRef": "Holdout Signed Error",
-              "displayName": "Holdout Signed Error"
+              "displayName": "Signed error"
             },
             {
               "field": {
@@ -89,7 +89,7 @@
               },
               "queryRef": "Sales.Holdout Bias",
               "nativeQueryRef": "Holdout Bias",
-              "displayName": "Holdout Bias"
+              "displayName": "Bias %"
             },
             {
               "field": {
@@ -104,7 +104,7 @@
               },
               "queryRef": "Sales.Holdout WAPE",
               "nativeQueryRef": "Holdout WAPE",
-              "displayName": "Holdout WAPE"
+              "displayName": "WAPE %"
             }
           ]
         }
@@ -221,7 +221,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "10D"
                 }
               }
             }
@@ -234,7 +234,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -252,14 +252,14 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "92D"
+                  "Value": "96D"
                 }
               }
             },
             "shadowBlur": {
               "expr": {
                 "Literal": {
-                  "Value": "7D"
+                  "Value": "4D"
                 }
               }
             },
@@ -346,7 +346,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "9D"
                 }
               }
             },
@@ -414,7 +414,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             }

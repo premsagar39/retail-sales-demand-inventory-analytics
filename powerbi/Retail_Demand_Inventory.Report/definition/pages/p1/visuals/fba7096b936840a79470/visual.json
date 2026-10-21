@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "fba7096b936840a79470",
   "position": {
-    "x": 946.875,
-    "y": 557.1875,
-    "width": 438.75,
-    "height": 269.5,
+    "x": 548,
+    "y": 568,
+    "width": 538,
+    "height": 242,
     "z": 110,
     "tabOrder": 110
   },
@@ -29,7 +29,7 @@
               },
               "queryRef": "Stores.store_nbr",
               "nativeQueryRef": "store_nbr",
-              "displayName": "store_nbr"
+              "displayName": "Store"
             },
             {
               "field": {
@@ -44,7 +44,7 @@
               },
               "queryRef": "Stores.city",
               "nativeQueryRef": "city",
-              "displayName": "city"
+              "displayName": "City"
             },
             {
               "field": {
@@ -59,7 +59,7 @@
               },
               "queryRef": "Sales.Recorded Sales",
               "nativeQueryRef": "Recorded Sales",
-              "displayName": "Recorded Sales"
+              "displayName": "Sales"
             },
             {
               "field": {
@@ -74,7 +74,7 @@
               },
               "queryRef": "Sales.Promoted Row Share",
               "nativeQueryRef": "Promoted Row Share",
-              "displayName": "Promoted Row Share"
+              "displayName": "Promoted %"
             }
           ]
         }
@@ -191,7 +191,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "10D"
                 }
               }
             }
@@ -204,7 +204,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -222,14 +222,14 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "92D"
+                  "Value": "96D"
                 }
               }
             },
             "shadowBlur": {
               "expr": {
                 "Literal": {
-                  "Value": "7D"
+                  "Value": "4D"
                 }
               }
             },
@@ -316,7 +316,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "9D"
                 }
               }
             },
@@ -384,7 +384,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             }
