@@ -1,0 +1,667 @@
+[
+  {
+    "path": ".env.example",
+    "bytes": 91,
+    "sha256": "f82e82bb55410c65236c77fefee437ca192c298bc42ee867700177fc5d782843"
+  },
+  {
+    "path": ".github/workflows/tests.yml",
+    "bytes": 336,
+    "sha256": "7b97af253a7e5f1385cab12fe95ff4694e07070a8ffc764011b7d42e972160ee"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 276,
+    "sha256": "83ef78c3d774258c495f5eb931203e4af9e1376261281264b722177ab9eaa6a3"
+  },
+  {
+    "path": "data/exports/backtest_predictions.csv",
+    "bytes": 393344,
+    "sha256": "09ddda49140f83eabb6689ab9e72f1e4feac6f990a4d75dabd4fe9bbe638704f"
+  },
+  {
+    "path": "data/exports/daily_family_sales.csv",
+    "bytes": 2164233,
+    "sha256": "5f3f19b003b3548db68fcc85701927a525d85cd097efe1ef4b02f0a5bb95eeb2"
+  },
+  {
+    "path": "data/exports/family_forecast_metrics.csv",
+    "bytes": 32617,
+    "sha256": "9ddb2398e6661fe02d9004f37295dd5957873ad9d2baf6970705daa1c2a72958"
+  },
+  {
+    "path": "data/exports/family_performance.csv",
+    "bytes": 1017,
+    "sha256": "79f56401112e286523a48f3c9d6ff8c9f573c9289960016923bccd3d75ae767a"
+  },
+  {
+    "path": "data/exports/fold_dates.csv",
+    "bytes": 255,
+    "sha256": "0c48a820573b98843e1ea479951e6059f0dc30433c5a01780b359f8d303ba53d"
+  },
+  {
+    "path": "data/exports/forecast_metrics.csv",
+    "bytes": 1335,
+    "sha256": "160f5f4890d68b41d9387e152d292bb6ee859a229d1c57ee1520c562d2bf9197"
+  },
+  {
+    "path": "data/exports/future_forecast.csv",
+    "bytes": 29693,
+    "sha256": "f6545116d5a926a7e57f99f7dcd9f6fbd9924f0667de388b430a1942017a7cc6"
+  },
+  {
+    "path": "data/exports/holiday_calendar_summary.csv",
+    "bytes": 224,
+    "sha256": "3c23bd1a1c60a085df26883de9431f37d2171e4f269932b1eb26f83320a1f483"
+  },
+  {
+    "path": "data/exports/inventory_scenarios.csv",
+    "bytes": 438,
+    "sha256": "300ed5695d9b2fe3c15e691f8fd569d86290852a0c5abf99217995408c2e8493"
+  },
+  {
+    "path": "data/exports/inventory_simulation.csv",
+    "bytes": 203871,
+    "sha256": "75d1b10bad0dd25e7ee3f052ea58bbd1a4da1b7be1423e52104b30d1f3b1a9c7"
+  },
+  {
+    "path": "data/exports/model_selection.csv",
+    "bytes": 76,
+    "sha256": "9feacb17189fa51bab4def1786b2d6f42b18f5b1ce28968e39e542128e60511e"
+  },
+  {
+    "path": "data/exports/monthly_sales.csv",
+    "bytes": 1947,
+    "sha256": "c5fcee1b2355decd2e253423d23fe78a937e0bbb1e7f50473dbe6df28b14ae10"
+  },
+  {
+    "path": "data/exports/promotion_summary.csv",
+    "bytes": 125,
+    "sha256": "25b549d10060ed7d7ba4d2e4899a83aa3439c870c9f20f36bcfe64c4e2938c8f"
+  },
+  {
+    "path": "data/exports/state_sales.csv",
+    "bytes": 497,
+    "sha256": "0876cf1354df477c177d0105a671328aedf08d6d08cb19bb4f704e0dafe5c032"
+  },
+  {
+    "path": "data/exports/store_performance.csv",
+    "bytes": 1486,
+    "sha256": "89077458d86358c604450cea4501e7fd7e0f580da62a9f648ed58d17731ea4ad"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1176,
+    "sha256": "e99ee86dbf4795af594bc94ef4529bb3d18141bfd9a15fe479728a4775668aa6"
+  },
+  {
+    "path": "notebooks/01_analysis.ipynb",
+    "bytes": 8729,
+    "sha256": "7d8c117a36de3d4a2a7f367d1da2227e91d94d4aa49ce9fe8d217256d0ccb057"
+  },
+  {
+    "path": "powerbi/DASHBOARD_DESIGN.md",
+    "bytes": 378,
+    "sha256": "c9517a3998863b34bc00e442cfd0b09474c7444de1b0f1500670127a8e793f80"
+  },
+  {
+    "path": "powerbi/MEASURE_DEFINITIONS.md",
+    "bytes": 3072,
+    "sha256": "751b6f58606dd0082c578cafb5c1050dc9705c8ed031e3bd598f8457a0d47d49"
+  },
+  {
+    "path": "powerbi/measures.dax",
+    "bytes": 2102,
+    "sha256": "647cd1435c1908fafa1c9f0cf200360911dff6ed038efbb6c6c059685a8205f5"
+  },
+  {
+    "path": "powerbi/OPEN_REPORT.md",
+    "bytes": 292,
+    "sha256": "a950cbc8a61865abf04b00055b017bafaa88fef0d032bfad9d15d184d2a4c4f9"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.pbip",
+    "bytes": 195,
+    "sha256": "68fcc04e5a9e6ac21c3bca4d4650fe0b929c8c58f65021fb08ad4e7bb0ee0ba1"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/page.json",
+    "bytes": 759,
+    "sha256": "e857d91b1c06357d5a2ace0e4ee86a949164e490645341673c9f74e9747cf8af"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/1e7b9db2b70b4eabb474/visual.json",
+    "bytes": 4448,
+    "sha256": "0a2208efb18bb3384ca3b57ea720049aff5f2fb5fca872ae56402ca5ce6f51cd"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/4538d0fe4b1d4cd7bdc4/visual.json",
+    "bytes": 4311,
+    "sha256": "237c0edd85f117b8835a4c96b71b2dd4c482a28e35ba7eda4551c5de4283416c"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/4852f7dff14641febb46/visual.json",
+    "bytes": 1459,
+    "sha256": "2d563a80695da6faa31ee29084afe0c1fb2b4fa78c58d7bb11077678d2e706b3"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/5b3789210db549a39acb/visual.json",
+    "bytes": 4285,
+    "sha256": "e1b54fbfcb5bc5614518a12ec3aa589972b1b8ca33e6421be07d35d909b76ea6"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/606f2c38ad3d44a7b44c/visual.json",
+    "bytes": 4450,
+    "sha256": "c3649cb9d7c93bc3c596bd6c2b466e237492b238a7cc832bbab767a6404d20e9"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/6a5d3890565f43e0bc03/visual.json",
+    "bytes": 3730,
+    "sha256": "91c17b65b695c04ff69daf9f05cec130b00bdc2a5aac63551b047ffea264ff28"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/9beb00191a8c446dbf89/visual.json",
+    "bytes": 3714,
+    "sha256": "36f61301d1ea4a3f15138ebf6a34404d821d5f6321992ebd24dc3b45d95c8b77"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/9c62ba219e0b415ebce7/visual.json",
+    "bytes": 4321,
+    "sha256": "df5ba009d62e64b3c4f62ddd44e8cbdaa04a62fd3375f8afc8c53bdbd4ae9674"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/a8f318a14f1146d0995b/visual.json",
+    "bytes": 1593,
+    "sha256": "a6246ea450af9359710fc9b91bef0b14a556f6a13a7e25d63a282b04f0df9488"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/b7a8370c20154a9eb707/visual.json",
+    "bytes": 4723,
+    "sha256": "e59e9b4717058fa3eb71d8082094a660c2de035301ba35fa0a84f190a7ee72a4"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/cd1f9bb2a0b0499982c9/visual.json",
+    "bytes": 4331,
+    "sha256": "97f7ccca639b591f066684f58caa07e294fadda954cb62932a9d2b423243a789"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p1/visuals/fba7096b936840a79470/visual.json",
+    "bytes": 4872,
+    "sha256": "f1c58c3793cac7049625a2941b167163d5bd2baf5104753ad5ac32ea5ddec1fe"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/page.json",
+    "bytes": 770,
+    "sha256": "114be090a320df55acc4d26ad9fc0ab8ea4d65dc6809de94812612c46e11e6f7"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/0e48eee5c25f4f63a20a/visual.json",
+    "bytes": 4305,
+    "sha256": "c38edc88a593d1856f9ff02bd5b88b528b96a582673df2dc3bc65e0f031ff7e0"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/1b520e7df9064767b010/visual.json",
+    "bytes": 4361,
+    "sha256": "57d5c60e5535e55b6571802b8cfcea0978efc88d18c43dc6839403ea2b80a479"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/2ae55e9392034a0196be/visual.json",
+    "bytes": 3714,
+    "sha256": "a841d8c7468682b48364473e854006b8527a3354cea012295b63e2cbbaaf1722"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/2e01d455d81944c3986e/visual.json",
+    "bytes": 3730,
+    "sha256": "a53df81c4a7baee8c906f97199d6faa749cfbb0c4611cc48f666e1c6ef84f3ef"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/3f90fc37d3094d0588b8/visual.json",
+    "bytes": 4431,
+    "sha256": "8bf429b6cb8f6b83b4c3b7690fc6bdce8e8e0416284333600bab8ca15e50e754"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/44b746bac37c46fd852e/visual.json",
+    "bytes": 4326,
+    "sha256": "572130d35e119b1236ee6268d402d84e8794a85ac065e65b9d575017a34514f0"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/534a1e6807ee4ebebdf2/visual.json",
+    "bytes": 1592,
+    "sha256": "8905e73d4775672d4b362ffedf4557db8638cc446ed04523f19c4fbda7a62631"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/90a69493bc494b44b7d2/visual.json",
+    "bytes": 4477,
+    "sha256": "ef901a4cbda5562782752f033333483d80a56f1a091988c2cf6b8e78913ad8c2"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/af48614b40b64e98b5b9/visual.json",
+    "bytes": 4326,
+    "sha256": "53ee76f862013cce5c685d54d0f5984908d86abcefdfcdfcc5802eca065550be"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/ce676d696b7a4a76bbd6/visual.json",
+    "bytes": 4948,
+    "sha256": "1edd3267540d9d92f88f4947bc890b75fab54030a281e4b875012bde4f83400a"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/db86319317d94412b243/visual.json",
+    "bytes": 1470,
+    "sha256": "7d0dbf188b43359dfb11234c91f42110c1105421809e12e43c1a25dd3e464fd7"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p2/visuals/f5cb82240b954b73bf93/visual.json",
+    "bytes": 4489,
+    "sha256": "5b25b619a8cac0ee54d69485217f3d305608ac9828e968ec7e06b6093b9b83c9"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/page.json",
+    "bytes": 763,
+    "sha256": "a3f04a2ae4f3f11bba334f35390157a4f2e0a2a50a4efdc4aa56ef41010ad231"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/05e25bd4afec4e04a8ca/visual.json",
+    "bytes": 4350,
+    "sha256": "c962e453014df1c21df476975cf7cf4dd0b9de1007ab4c04956af3f5d0536021"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/19eb55b49d29430f9469/visual.json",
+    "bytes": 4398,
+    "sha256": "ff5769b19993436be6c30d1101967611d8b109a03329e63da0043b33a29e0f2c"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/259a1a9872f54c369a7a/visual.json",
+    "bytes": 1632,
+    "sha256": "664f9704c9fe7138741a7392d32e798c299d0e6240034c226317bd2d3db0e724"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/3449f06e0cdc4915885b/visual.json",
+    "bytes": 4755,
+    "sha256": "8516f8367834a986b2836b7c91ae7d1e1847c81ec8c6f588401c25c1c6b7b1f0"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/66919bd79af1449abc40/visual.json",
+    "bytes": 1463,
+    "sha256": "67ffd80fa1090147dc1d66b7ab39d3b3b8ed71ffdf9e3535ebfe36f0b498a845"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/9c0b8e07cd73442a8a9c/visual.json",
+    "bytes": 3730,
+    "sha256": "2ad4ada70f4b580ff177c34ac88b56d4d6950b59c2a99cacd22a3091160dd2a3"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/ac5f49599e2d499aa321/visual.json",
+    "bytes": 4504,
+    "sha256": "770acd33ef41b0aa6d5a6437e5fab236ca52677572b082403b371062ae5f5e84"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/c3d44dac901c4bbaa1cd/visual.json",
+    "bytes": 4361,
+    "sha256": "0edee2f5b22d66f081bb406227e8b1b33a81d9cfedf72104adac18bc6f857c72"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/d04375d258e74ebebf83/visual.json",
+    "bytes": 4296,
+    "sha256": "def7c7f77afbfc1eec8cb6aea8bc53570af004fcf21e8e9923626ecbb9696e08"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/d36556f95b3b40199a44/visual.json",
+    "bytes": 5233,
+    "sha256": "a1a89453ddac9db404b5c9c17927888c9ab18d4f7d8795b8c0b6ae0ca72a21c9"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p3/visuals/d7798c8f61aa4cdb99a7/visual.json",
+    "bytes": 4291,
+    "sha256": "75a0cecafa25ceb9c20753d689de749b0ab3bc893ff27e298dcf7e74be6f00d5"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/page.json",
+    "bytes": 763,
+    "sha256": "58c545d3646a1fb9afb56d3731b2231689cbe992f136742f62c45c178c5352dc"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/2f3fcc4e5a314e4c85e8/visual.json",
+    "bytes": 3730,
+    "sha256": "7cd90aae3bb2e9edc018f4cbf2493ebbda867db480379b79ff32da177e000226"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/4812d4e478ab404192b1/visual.json",
+    "bytes": 4331,
+    "sha256": "4a0069ec1ebcc1991475e790d950971c29fc8fce3deab3d9a7d77d8f7b2abed5"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/50dff2dccff54994a26d/visual.json",
+    "bytes": 4761,
+    "sha256": "94f0cbc97d6e86abf5b58154e6c1a2cb04f2f3fad3eaa8c066ee6e2223c03fec"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/557f61a9eec74a2b9674/visual.json",
+    "bytes": 4325,
+    "sha256": "8d2a9bee36c36117e1bd6a856a0fe7acf4b27babb2d346a5f28f240f8325c3e2"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/67cf9d64a349462bac5a/visual.json",
+    "bytes": 4331,
+    "sha256": "a93bac8bf14778d1cc9297c7af4b9906156f24fb667c2b29a3b84c6bf122829e"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/6917778d9b844e1fb124/visual.json",
+    "bytes": 4336,
+    "sha256": "c24a5eae151b162f3d4eaf285a6a289fff80ddee35e241606457858f1c04f4f4"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/6c8d522e80964b748bd9/visual.json",
+    "bytes": 4513,
+    "sha256": "5c96ccea43582cd586ca579c2025e5aebacb8b68b7cb9e499db9905b84577bcb"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/7087fa60ff864acb8007/visual.json",
+    "bytes": 4493,
+    "sha256": "deffd9b881065ded0e6bebd3d49cc8da46f346bf15cc6c53592311da33fb8899"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/77dafc688b1d46d2b225/visual.json",
+    "bytes": 3747,
+    "sha256": "e534678713652e017c60ba49b49a65b881e4be041538c7576dc164b9eb8b1d63"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/78850d96c5b74f9b83ca/visual.json",
+    "bytes": 1463,
+    "sha256": "589e93a76ae38b629abd57f114950c65c8f757f02ec3da7fedbd87ab515b9c20"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/ae035a5be7fa41c1a0c7/visual.json",
+    "bytes": 5467,
+    "sha256": "4f17937223696f34673be0d8a8adbc8c2a3a5bd95d0be36e7ac4e185e7943442"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/p4/visuals/debabc5da99d464c9907/visual.json",
+    "bytes": 1618,
+    "sha256": "9fe1e0d493df4dd55fcac056f770cd1eeb0d41d1fe7917e81e9123e508f58e73"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/pages/pages.json",
+    "bytes": 221,
+    "sha256": "01eeadf1054942b8c93ef68e216b181a28318a8d173d4eda4c5ec7375fb1a600"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/report.json",
+    "bytes": 146,
+    "sha256": "9070c850780e1e045e83722f00932c32aafbc46799d5313b45d6f9f8ce411e6b"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition/version.json",
+    "bytes": 152,
+    "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.Report/definition.pbir",
+    "bytes": 137,
+    "sha256": "1358db02c6977d1b2d0f7af60ec63c4487de77766f27bfbcdea7787b27edaf6c"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.SemanticModel/definition.pbism",
+    "bytes": 43,
+    "sha256": "473e378d0e6eba4290e9fa44df81f91ae8308c05abb1ad566d29067d22631073"
+  },
+  {
+    "path": "powerbi/Retail_Demand_Inventory.SemanticModel/model.bim",
+    "bytes": 28638,
+    "sha256": "c7cedb97ba1596ecdea514ea1254040fa6df7a65856cce94a41786deeaad31d2"
+  },
+  {
+    "path": "pytest.ini",
+    "bytes": 64,
+    "sha256": "7791f8a30002e1894c931553bec9826e7d7db30bc62b235c18909648837c420d"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5890,
+    "sha256": "31e5872c0f77793b9a327e43a66a055a9d2aad6fbd88199604c60c40d391aae3"
+  },
+  {
+    "path": "reports/BUSINESS_FINDINGS.md",
+    "bytes": 1405,
+    "sha256": "7ac2a3d13e49fdd4ff829510d095722411a38ace30a568c560576616340610c4"
+  },
+  {
+    "path": "reports/DATA_DICTIONARY.md",
+    "bytes": 1233,
+    "sha256": "03f1ef235acae6c47c14c2a78342755e5c55af5a9b0e87d76b4ac8470036ed95"
+  },
+  {
+    "path": "reports/DATA_PROVENANCE.json",
+    "bytes": 1336,
+    "sha256": "c7122c65d3b4f9957fd248da341c9e45fde5c36620a485d7f5dcb2cb8a5779d2"
+  },
+  {
+    "path": "reports/DATA_QUALITY.md",
+    "bytes": 1455,
+    "sha256": "788a1d8c20a273dcacbafee1d245b43659a9848850fe2df34db1373e42c4ef1f"
+  },
+  {
+    "path": "reports/data_status.json",
+    "bytes": 1275,
+    "sha256": "0bbb18da86c887433d25eabbdbefa2795fcb66cfff6eeafc0f8b2c0d6ee35bad"
+  },
+  {
+    "path": "reports/figures/native_forecast.jpg",
+    "bytes": 109922,
+    "sha256": "477956c41f8dbe98eeeb961dcb379b3794582dc26aa75c3c193f4b813fc824e0"
+  },
+  {
+    "path": "reports/figures/native_inventory.jpg",
+    "bytes": 103204,
+    "sha256": "9c07077aeca6a0af6efa54e1eb134232ece4733c831c2b5086be0e3259b0b930"
+  },
+  {
+    "path": "reports/figures/project_overview.png",
+    "bytes": 219241,
+    "sha256": "decae3a6ec24142f6580828e50750d73379f371d2b08bb59c0da8a7a6f7ddd6d"
+  },
+  {
+    "path": "reports/Interactive_Dashboard.html",
+    "bytes": 4876497,
+    "sha256": "216b3d3a933c69b125e8c1a5a405c7001a0d37d21fcd0f0159e39ae2725915a3"
+  },
+  {
+    "path": "reports/INTERVIEW_GUIDE.md",
+    "bytes": 1148,
+    "sha256": "21139f0322f361e1f11660bd3471db1d9e009bd70e4d8b0a6892ecd599b957a2"
+  },
+  {
+    "path": "reports/mysql_validation.json",
+    "bytes": 576,
+    "sha256": "4bfe63a8a529d27fa250fd231c2e93d0e0d2edf0e4d160b03be6851e27d8b72c"
+  },
+  {
+    "path": "reports/native_validation.json",
+    "bytes": 424,
+    "sha256": "dbcb55ea25d70a12a389792807a5436cf0533b7e46479a21aff7e290a2b1a9e8"
+  },
+  {
+    "path": "reports/PUBLICATION_CHECKLIST.md",
+    "bytes": 736,
+    "sha256": "f60ff8a251314207eda7671ddc7726dd45512e89919930496ffe44e16ded356b"
+  },
+  {
+    "path": "reports/QA_STATUS.md",
+    "bytes": 1492,
+    "sha256": "630da964360b981428fe310ad635b230b991350a3fd674f65e7e9a725096d753"
+  },
+  {
+    "path": "reports/result_validation.json",
+    "bytes": 290,
+    "sha256": "5bc7fefc018383d134ad4c4531abe80d91866c7fb45154d03e964267c0a07127"
+  },
+  {
+    "path": "reports/schema_validation.json",
+    "bytes": 70,
+    "sha256": "461e3314f70e329b6b0abc15858175879bf859e2cf969fd720251d9926dfd93e"
+  },
+  {
+    "path": "reports/sql_execution.json",
+    "bytes": 2503,
+    "sha256": "6909b635a1a2c3c958474ab8a7d718f3b1dd4d21b8d823f6c0ef277994a0f111"
+  },
+  {
+    "path": "reports/sql_results/q01.csv",
+    "bytes": 68772,
+    "sha256": "23e86dba87896bd7c859092a982197f61509c51c704f82a9a79d5dd3d2535495"
+  },
+  {
+    "path": "reports/sql_results/q02.csv",
+    "bytes": 2700,
+    "sha256": "c917f000d6bdf1df6640622579fbb725e03fd14717cddc400a8379e56252cd76"
+  },
+  {
+    "path": "reports/sql_results/q03.csv",
+    "bytes": 1382,
+    "sha256": "66a50e03f47bfc42c2a96634e9590727a58ea48c7d963f8d45be4e4884655b57"
+  },
+  {
+    "path": "reports/sql_results/q04.csv",
+    "bytes": 1546,
+    "sha256": "886fb650bb273f92f81cc1f2235c5991411b5cd0e6af0bc57cd05a042a1acd7e"
+  },
+  {
+    "path": "reports/sql_results/q05.csv",
+    "bytes": 835,
+    "sha256": "390b9fd1c32eb8140c6fe75c2a90e92733d5d967a895b382833615bfbf583f93"
+  },
+  {
+    "path": "reports/sql_results/q06.csv",
+    "bytes": 137,
+    "sha256": "96a9a0e6c99401f91793636829bfe428c0a4e8e3d746e99d0d08eac93d72ef35"
+  },
+  {
+    "path": "reports/sql_results/q07.csv",
+    "bytes": 348,
+    "sha256": "bb788e5b128c37cd378b24a8d4c2ea09d1c374a97c793b6bb456b64a0753cf10"
+  },
+  {
+    "path": "reports/sql_results/q08.csv",
+    "bytes": 11989,
+    "sha256": "7135545bb461cea6a9319845851f4c5370bb4c89149af47e9c873a84236f2be0"
+  },
+  {
+    "path": "reports/sql_results/q09.csv",
+    "bytes": 114,
+    "sha256": "344338e275c20c2b5009d82c79b0f37e4d90f4b051718e1ca36d3abe2b721bab"
+  },
+  {
+    "path": "reports/sql_results/q10.csv",
+    "bytes": 952,
+    "sha256": "fdebc792e2a08307b0e2ca82ad7f98c8a9dac8e2c54903af693b2c41a4a6adea"
+  },
+  {
+    "path": "reports/sql_results/q11.csv",
+    "bytes": 1078,
+    "sha256": "2f5335920f38b131f5d4459e6c3010d8561a19ce1961541458556551d10417df"
+  },
+  {
+    "path": "reports/sql_results/q12.csv",
+    "bytes": 935,
+    "sha256": "7c8d69ae134a58138e530a03b6f971679f4bacdb2b74bb676d13514c84582922"
+  },
+  {
+    "path": "reports/sql_results/q13.csv",
+    "bytes": 1201,
+    "sha256": "8b900ba1d3acaadfa9ddc6f91471fc3d78148a0a25e694e7ef79c77dd4b3a05c"
+  },
+  {
+    "path": "reports/sql_results/q14.csv",
+    "bytes": 2634028,
+    "sha256": "7f6fe29c9d0b703e51f2d89c230d3d8fc759f5c82c6d91795cffeccda8743909"
+  },
+  {
+    "path": "reports/sql_results/q15.csv",
+    "bytes": 2263876,
+    "sha256": "a45965a4b48b8fe850f472a398773700a7d50f2ba218f2568be576859511957d"
+  },
+  {
+    "path": "reports/sql_results/q16.csv",
+    "bytes": 1628,
+    "sha256": "1023abf3ec182ea9339adcfb65b97071f1ea8d33bde9804be9040c6b79f95e05"
+  },
+  {
+    "path": "reports/sql_results/q17.csv",
+    "bytes": 24,
+    "sha256": "0ddc4c4fe6101ada8411650be0cdcb85c7835b3c71c35d5ad806430ccd12f951"
+  },
+  {
+    "path": "reports/sql_results/q18.csv",
+    "bytes": 1530789,
+    "sha256": "a8cb6efd9c3475015ad9f37b669fee175ffe6fcf73b3af55ec031f179dabf2e5"
+  },
+  {
+    "path": "reports/sql_results/q19.csv",
+    "bytes": 1424,
+    "sha256": "11a6f5da0204547df062c34a0a29607c50423526cf0a6c5f8d6b4f904a092291"
+  },
+  {
+    "path": "reports/sql_results/q20.csv",
+    "bytes": 2318,
+    "sha256": "c14d9d016b70399cf3fb951b83d3a7bc7ddec377ea707096c338a05ef8d9f134"
+  },
+  {
+    "path": "reports/sql_validation.json",
+    "bytes": 576,
+    "sha256": "4bfe63a8a529d27fa250fd231c2e93d0e0d2edf0e4d160b03be6851e27d8b72c"
+  },
+  {
+    "path": "reports/unit_validation.json",
+    "bytes": 129,
+    "sha256": "01e592af2d6799365d44f59d3732f7a21f753193faa140f055190fd7352d30b7"
+  },
+  {
+    "path": "requirements-tested.txt",
+    "bytes": 204,
+    "sha256": "d2ab42fe4d75f214d51949611f6028c5a675b6594a3fcd27ab2d7b446b93a9d6"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 197,
+    "sha256": "1deb7b90e66b4cbd72528823ad0c0f84a6f24ebdf48cfb2c51e1a8447bfc1079"
+  },
+  {
+    "path": "sql/analysis_queries.sql",
+    "bytes": 4335,
+    "sha256": "f1cb68a950a6fe638ea9f8d533758384415e9c3e4061fabf662a867e529f6793"
+  },
+  {
+    "path": "sql/schema.sql",
+    "bytes": 1779,
+    "sha256": "01bd73ad144e8df4f2541df51106dc18045ffe99c3cd8cd2f108e3e508d5dc5e"
+  },
+  {
+    "path": "src/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "src/database.py",
+    "bytes": 3377,
+    "sha256": "bc31acfeb5fee13d93bdef8f793b50d9a7c573a94287490eca8dc36e79976c45"
+  },
+  {
+    "path": "src/pipeline.py",
+    "bytes": 16939,
+    "sha256": "e6685274e855a64b45f41945cf41720f084f88ecda0037c6695314ce2e295ef7"
+  },
+  {
+    "path": "src/reporting.py",
+    "bytes": 9480,
+    "sha256": "7216af8ae73b026cbfc6e0070a16b306838582522907c3dd0a1fa3d28f3a8bc9"
+  },
+  {
+    "path": "src/schema.json",
+    "bytes": 978,
+    "sha256": "a4c3cf31da8e4e66049b2b9ec91428ac7f9bc3e1fdeb98f1358aed9575872d23"
+  },
+  {
+    "path": "tests/test_pipeline.py",
+    "bytes": 3305,
+    "sha256": "73b5d54dceee95705b8af1caf6606571bdbbd3e4f4b9c7674f742b40e471351e"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "engine": "MySQL 8",
+  "queries_executed": 20,
+  "all_kpi_reconciliations_pass": true,
+  "checks": {
+    "source_rows": {
+      "python": 3000888,
+      "mysql": 3000888,
+      "matches": true
+    },
+    "observed_days": {
+      "python": 1684,
+      "mysql": 1684,
+      "matches": true
+    },
+    "recorded_sales": {
+      "python": 1073644952.2030684,
+      "mysql": 1073644952.2030686,
+      "matches": true
+    },
+    "monthly_sales": {
+      "python": 1073644952.2030684,
+      "mysql": 1073644952.2030684,
+      "matches": true
+    }
+  }
+}

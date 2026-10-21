@@ -1,0 +1,5 @@
+{
+  "passed": 6,
+  "command": "python -m pytest tests -q",
+  "synthetic_fixtures_are_behavioral_not_business_results": true
+}

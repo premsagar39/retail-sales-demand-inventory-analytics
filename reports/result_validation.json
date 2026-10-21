@@ -1,0 +1,10 @@
+{
+  "all_pass": true,
+  "prediction_rows_verified": 6336,
+  "score_rows_recomputed": 12,
+  "inventory_paths_checked": 99,
+  "future_forecasts_checked": 528,
+  "nonoverlapping_selection_and_holdout": true,
+  "model_selection_excludes_holdout": true,
+  "behavioral_tests_passed": 6
+}

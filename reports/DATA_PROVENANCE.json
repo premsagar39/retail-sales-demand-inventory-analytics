@@ -1,0 +1,30 @@
+{
+  "original_source": "https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data",
+  "public_archive_download": "https://raw.githubusercontent.com/OmarEssam-20/Store-Sales---Time-Series-Forecasting/main/store-sales-time-series-forecasting.zip",
+  "download_date": "2026-10-21",
+  "archive_sha256": "12e9c1dc4833cc804b3ff1515bd7b688f45fd8216fb2b340525036b006d625be",
+  "files": {
+    "holidays_events.csv": {
+      "bytes": 22309,
+      "sha256": "81a183d6c4d691b57f84a0fde6bbf734a5b3c36a74b97378bf33a592648e2999"
+    },
+    "stores.csv": {
+      "bytes": 1387,
+      "sha256": "af503b2bce11d7906d249f81cc0598f10e2addcc9f6c59aa2d95c9f2652c296b"
+    },
+    "test.csv": {
+      "bytes": 1022269,
+      "sha256": "087ec1ecec76dbba9ea2adb48b8b2fd527c7c59adb82b0dfb9f6f82739400d26"
+    },
+    "train.csv": {
+      "bytes": 121800373,
+      "sha256": "99a1b7f4241821df10fa71f23abdd71c634f71f901e3cab1400c0f0c583f862c"
+    },
+    "transactions.csv": {
+      "bytes": 1552637,
+      "sha256": "e116384a6981af74932832436aa2f6a43121f77ca81accc44e3a5160158ca03c"
+    }
+  },
+  "holiday_exactly_matches_user_supplied_file": true,
+  "scope": "Dataset files only; no third-party analysis, code, pretrained model or claimed results were used. Full source data is not redistributed in project packages."
+}

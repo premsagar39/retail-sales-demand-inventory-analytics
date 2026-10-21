@@ -1,0 +1,47 @@
+{
+  "source": "Favorita Store Sales competition",
+  "holiday_records": 350,
+  "missing_files": [],
+  "status": "Analysis executed",
+  "forecast_results_available": true,
+  "future_forecast_rows": 528,
+  "sales_rows": 3000888,
+  "sales_total": 1073644952.2030684,
+  "stores": 54,
+  "families": 33,
+  "observed_days": 1684,
+  "date_min": "2013-01-01",
+  "date_max": "2017-08-15",
+  "missing_calendar_dates": [
+    "2013-12-25",
+    "2014-12-25",
+    "2015-12-25",
+    "2016-12-25"
+  ],
+  "model_window_start": "2016-12-26",
+  "model_window_days": 233,
+  "best_model_selected_on_folds_1_2": "Random Forest",
+  "final_holdout": {
+    "fold": 3,
+    "purpose": "Final holdout",
+    "method": "Random Forest",
+    "MacroFamilyWAPE": 0.22118821037345593,
+    "MAE": 2415.8221600489587,
+    "RMSE": 7521.971653369633,
+    "WAPE": 0.09576821706869583
+  },
+  "holdout_days": 16,
+  "inventory_assumptions": {
+    "lead_days": 7,
+    "review_days": 7,
+    "z_values": [
+      0,
+      1.28,
+      1.65
+    ],
+    "assumed_cost_per_unit_day": 0.01,
+    "cost_currency": "scenario units, not observed money",
+    "stockout_policy": "lost sales"
+  },
+  "forecast_grain": "National daily sales per family; store comparisons remain descriptive"
+}

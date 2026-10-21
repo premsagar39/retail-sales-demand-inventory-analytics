@@ -1,0 +1,812 @@
+{
+  "name": "Retail_Demand_Inventory",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "kind": "m",
+        "expression": "\"C:/Data/retail-sales-demand-inventory-analytics/data/\" meta [IsParameterQuery=true,Type=\"Text\",IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "store_nbr",
+            "dataType": "int64",
+            "sourceColumn": "store_nbr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "family",
+            "dataType": "string",
+            "sourceColumn": "family",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sales",
+            "dataType": "double",
+            "sourceColumn": "sales",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "onpromotion",
+            "dataType": "double",
+            "sourceColumn": "onpromotion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "PromotionGroup",
+            "dataType": "string",
+            "sourceColumn": "PromotionGroup",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"processed/sales.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"id\", Int64.Type}, {\"date\", type datetime}, {\"store_nbr\", Int64.Type}, {\"family\", type text}, {\"sales\", type number}, {\"onpromotion\", type number}},\"en-US\"),",
+                " Final = Table.AddColumn(Typed,\"PromotionGroup\",each if [onpromotion]>0 then \"Promoted\" else \"Not promoted\",type text)",
+                "in Final"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Recorded Sales",
+            "expression": "SUM(Sales[sales])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Sales Rows",
+            "expression": "COUNTROWS(Sales)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Stores Observed",
+            "expression": "DISTINCTCOUNT(Sales[store_nbr])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Families Observed",
+            "expression": "DISTINCTCOUNT(Sales[family])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Observed Sales Days",
+            "expression": "DISTINCTCOUNT(Sales[date])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Sales per Observed Day",
+            "expression": "DIVIDE([Recorded Sales],[Observed Sales Days])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Promotion Items",
+            "expression": "SUM(Sales[onpromotion])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Promoted Row Share",
+            "expression": "DIVIDE(CALCULATE([Sales Rows],Sales[onpromotion]>0),[Sales Rows])",
+            "formatString": "0.0%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Zero Recorded Sales Share",
+            "expression": "DIVIDE(CALCULATE([Sales Rows],Sales[sales]=0),[Sales Rows])",
+            "formatString": "0.0%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Store Transactions",
+            "expression": "SUM(Transactions[transactions])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Selected Forecast Model",
+            "expression": "MAX(Selection[SelectedModel])",
+            "formatString": "",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout Actual",
+            "expression": "VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[sales]),Forecasts[fold]=3,Forecasts[method]=M)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout Forecast",
+            "expression": "VAR M=[Selected Forecast Model] RETURN CALCULATE(SUM(Forecasts[prediction]),Forecasts[fold]=3,Forecasts[method]=M)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout Absolute Error",
+            "expression": "VAR M=[Selected Forecast Model] RETURN CALCULATE(SUMX(Forecasts,ABS(Forecasts[sales]-Forecasts[prediction])),Forecasts[fold]=3,Forecasts[method]=M)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout WAPE",
+            "expression": "DIVIDE([Holdout Absolute Error],[Holdout Actual])",
+            "formatString": "0.00%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout Macro Family WAPE",
+            "expression": "AVERAGEX(VALUES(Families[family]),[Holdout WAPE])",
+            "formatString": "0.00%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Holdout MAE",
+            "expression": "VAR M=[Selected Forecast Model] RETURN DIVIDE([Holdout Absolute Error],CALCULATE(COUNTROWS(Forecasts),Forecasts[fold]=3,Forecasts[method]=M))",
+            "formatString": "#,0.00",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Model WAPE Full Portfolio",
+            "expression": "CALCULATE(MAX(Scores[WAPE]),Scores[fold]=3)",
+            "formatString": "0.00%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Future Forecast",
+            "expression": "SUM(Future[prediction])",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Scenario Z",
+            "expression": "SELECTEDVALUE(Inventory[service_z],1.65)",
+            "formatString": "0.00",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Scenario Fill Rate",
+            "expression": "VAR Z=[Scenario Z] RETURN DIVIDE(CALCULATE(SUM(Inventory[fulfilled]),Inventory[service_z]=Z),CALCULATE(SUM(Inventory[demand]),Inventory[service_z]=Z))",
+            "formatString": "0.00%",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Scenario Lost Sales",
+            "expression": "VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[lost_sales_units]),Inventory[service_z]=Z)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Scenario Mean Stock",
+            "expression": "VAR Z=[Scenario Z] RETURN CALCULATE(AVERAGE(Inventory[ending_stock]),Inventory[service_z]=Z)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          },
+          {
+            "name": "Assumed Holding Cost",
+            "expression": "VAR Z=[Scenario Z] RETURN CALCULATE(SUM(Inventory[holding_cost_assumed]),Inventory[service_z]=Z)",
+            "formatString": "#,0",
+            "displayFolder": "Demand Analytics",
+            "description": "See MEASURE_DEFINITIONS.md for denominator, scope and limitations."
+          }
+        ]
+      },
+      {
+        "name": "Stores",
+        "columns": [
+          {
+            "name": "store_nbr",
+            "dataType": "int64",
+            "sourceColumn": "store_nbr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "state",
+            "dataType": "string",
+            "sourceColumn": "state",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "type",
+            "dataType": "string",
+            "sourceColumn": "type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cluster",
+            "dataType": "int64",
+            "sourceColumn": "cluster",
+            "summarizeBy": "sum"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Stores",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"processed/stores.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"store_nbr\", Int64.Type}, {\"city\", type text}, {\"state\", type text}, {\"type\", type text}, {\"cluster\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Families",
+        "columns": [
+          {
+            "name": "family",
+            "dataType": "string",
+            "sourceColumn": "family",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Families",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"processed/families.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"family\", type text}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dates",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "month",
+            "dataType": "string",
+            "sourceColumn": "month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weekday",
+            "dataType": "int64",
+            "sourceColumn": "weekday",
+            "summarizeBy": "sum"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dates",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"processed/dates.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"date\", type datetime}, {\"year\", Int64.Type}, {\"month\", type text}, {\"weekday\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Transactions",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "store_nbr",
+            "dataType": "int64",
+            "sourceColumn": "store_nbr",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "transactions",
+            "dataType": "int64",
+            "sourceColumn": "transactions",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Transactions",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"processed/transactions.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"date\", type datetime}, {\"store_nbr\", Int64.Type}, {\"transactions\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Forecasts",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "family",
+            "dataType": "string",
+            "sourceColumn": "family",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "prediction",
+            "dataType": "double",
+            "sourceColumn": "prediction",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "sales",
+            "dataType": "double",
+            "sourceColumn": "sales",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "method",
+            "dataType": "string",
+            "sourceColumn": "method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fold",
+            "dataType": "int64",
+            "sourceColumn": "fold",
+            "summarizeBy": "sum"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Forecasts",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"exports/backtest_predictions.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"date\", type datetime}, {\"family\", type text}, {\"prediction\", type number}, {\"sales\", type number}, {\"method\", type text}, {\"fold\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Scores",
+        "columns": [
+          {
+            "name": "fold",
+            "dataType": "int64",
+            "sourceColumn": "fold",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "purpose",
+            "dataType": "string",
+            "sourceColumn": "purpose",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "method",
+            "dataType": "string",
+            "sourceColumn": "method",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MacroFamilyWAPE",
+            "dataType": "double",
+            "sourceColumn": "MacroFamilyWAPE",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "MAE",
+            "dataType": "double",
+            "sourceColumn": "MAE",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "RMSE",
+            "dataType": "double",
+            "sourceColumn": "RMSE",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "WAPE",
+            "dataType": "double",
+            "sourceColumn": "WAPE",
+            "summarizeBy": "sum"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Scores",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"exports/forecast_metrics.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"fold\", Int64.Type}, {\"purpose\", type text}, {\"method\", type text}, {\"MacroFamilyWAPE\", type number}, {\"MAE\", type number}, {\"RMSE\", type number}, {\"WAPE\", type number}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Inventory",
+        "columns": [
+          {
+            "name": "day",
+            "dataType": "int64",
+            "sourceColumn": "day",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "family",
+            "dataType": "string",
+            "sourceColumn": "family",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "service_z",
+            "dataType": "double",
+            "sourceColumn": "service_z",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "demand",
+            "dataType": "double",
+            "sourceColumn": "demand",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "fulfilled",
+            "dataType": "double",
+            "sourceColumn": "fulfilled",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "lost_sales_units",
+            "dataType": "double",
+            "sourceColumn": "lost_sales_units",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ending_stock",
+            "dataType": "double",
+            "sourceColumn": "ending_stock",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "order_quantity",
+            "dataType": "double",
+            "sourceColumn": "order_quantity",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "arrival_units",
+            "dataType": "double",
+            "sourceColumn": "arrival_units",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "holding_cost_assumed",
+            "dataType": "double",
+            "sourceColumn": "holding_cost_assumed",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "safety_stock",
+            "dataType": "double",
+            "sourceColumn": "safety_stock",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "reorder_point",
+            "dataType": "double",
+            "sourceColumn": "reorder_point",
+            "summarizeBy": "sum"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Inventory",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"exports/inventory_simulation.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"day\", Int64.Type}, {\"date\", type datetime}, {\"family\", type text}, {\"service_z\", type number}, {\"demand\", type number}, {\"fulfilled\", type number}, {\"lost_sales_units\", type number}, {\"ending_stock\", type number}, {\"order_quantity\", type number}, {\"arrival_units\", type number}, {\"holding_cost_assumed\", type number}, {\"safety_stock\", type number}, {\"reorder_point\", type number}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Future",
+        "columns": [
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "family",
+            "dataType": "string",
+            "sourceColumn": "family",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "prediction",
+            "dataType": "double",
+            "sourceColumn": "prediction",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "method",
+            "dataType": "string",
+            "sourceColumn": "method",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Future",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"exports/future_forecast.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"date\", type datetime}, {\"family\", type text}, {\"prediction\", type number}, {\"method\", type text}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Selection",
+        "columns": [
+          {
+            "name": "SelectedModel",
+            "dataType": "string",
+            "sourceColumn": "SelectedModel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HoldoutStart",
+            "dataType": "string",
+            "sourceColumn": "HoldoutStart",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HoldoutEnd",
+            "dataType": "string",
+            "sourceColumn": "HoldoutEnd",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Selection",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(DataRoot & \"exports/model_selection.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"SelectedModel\", type text}, {\"HoldoutStart\", type text}, {\"HoldoutEnd\", type text}},\"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "d994396e-0a57-4783-9035-d7ff919ba415",
+        "fromTable": "Sales",
+        "fromColumn": "store_nbr",
+        "toTable": "Stores",
+        "toColumn": "store_nbr",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "52a7361a-da2e-47c4-8d7b-0c0277129037",
+        "fromTable": "Transactions",
+        "fromColumn": "store_nbr",
+        "toTable": "Stores",
+        "toColumn": "store_nbr",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "a4b8b0a3-8965-41f7-a939-6172c235885c",
+        "fromTable": "Sales",
+        "fromColumn": "date",
+        "toTable": "Dates",
+        "toColumn": "date",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "5b9f450b-f919-408c-8bfa-9ad0416a0fb7",
+        "fromTable": "Transactions",
+        "fromColumn": "date",
+        "toTable": "Dates",
+        "toColumn": "date",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "2003a302-17db-40d0-9a59-99854e6a1afe",
+        "fromTable": "Sales",
+        "fromColumn": "family",
+        "toTable": "Families",
+        "toColumn": "family",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "5aff9340-3ed7-4f6e-9aaf-d9a0cb48ad77",
+        "fromTable": "Forecasts",
+        "fromColumn": "family",
+        "toTable": "Families",
+        "toColumn": "family",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "a203393b-8439-4e16-a233-eb4ed5879114",
+        "fromTable": "Inventory",
+        "fromColumn": "family",
+        "toTable": "Families",
+        "toColumn": "family",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "eaed3f38-3672-4d87-96ee-3e58bd92131f",
+        "fromTable": "Future",
+        "fromColumn": "family",
+        "toTable": "Families",
+        "toColumn": "family",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "2470df5c-e6da-4f86-9c87-5ce9cfcaabbd",
+        "fromTable": "Forecasts",
+        "fromColumn": "date",
+        "toTable": "Dates",
+        "toColumn": "date",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "b712e999-ba26-4495-a2f2-cfe3b6db06b2",
+        "fromTable": "Inventory",
+        "fromColumn": "date",
+        "toTable": "Dates",
+        "toColumn": "date",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  }
+}

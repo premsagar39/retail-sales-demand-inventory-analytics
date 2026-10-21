@@ -1,0 +1,170 @@
+{
+  "Q01": {
+    "rows": 1684,
+    "columns": [
+      "date",
+      "Sales",
+      "PromotionCount",
+      "StoreFamilyRows"
+    ]
+  },
+  "Q02": {
+    "rows": 56,
+    "columns": [
+      "Month",
+      "Sales",
+      "MoMGrowth"
+    ]
+  },
+  "Q03": {
+    "rows": 54,
+    "columns": [
+      "store_nbr",
+      "Sales",
+      "SalesRank"
+    ]
+  },
+  "Q04": {
+    "rows": 33,
+    "columns": [
+      "family",
+      "Sales",
+      "SalesShare"
+    ]
+  },
+  "Q05": {
+    "rows": 22,
+    "columns": [
+      "state",
+      "city",
+      "Sales"
+    ]
+  },
+  "Q06": {
+    "rows": 5,
+    "columns": [
+      "type",
+      "Stores",
+      "Sales"
+    ]
+  },
+  "Q07": {
+    "rows": 7,
+    "columns": [
+      "Weekday",
+      "Sales",
+      "Days",
+      "SalesPerObservedDay"
+    ]
+  },
+  "Q08": {
+    "rows": 396,
+    "columns": [
+      "family",
+      "MonthOfYear",
+      "Sales",
+      "Days"
+    ]
+  },
+  "Q09": {
+    "rows": 2,
+    "columns": [
+      "PromotionGroup",
+      "RowsObserved",
+      "MeanSales"
+    ]
+  },
+  "Q10": {
+    "rows": 33,
+    "columns": [
+      "family",
+      "PromotedRowShare",
+      "PromotionCount"
+    ]
+  },
+  "Q11": {
+    "rows": 33,
+    "columns": [
+      "family",
+      "ZeroRows",
+      "RowsObserved",
+      "ZeroShare"
+    ]
+  },
+  "Q12": {
+    "rows": 54,
+    "columns": [
+      "store_nbr",
+      "Transactions",
+      "ObservedDays"
+    ]
+  },
+  "Q13": {
+    "rows": 54,
+    "columns": [
+      "store_nbr",
+      "UnitsPerTransaction"
+    ]
+  },
+  "Q14": {
+    "rows": 55572,
+    "columns": [
+      "family",
+      "date",
+      "Sales",
+      "Prior7Mean"
+    ]
+  },
+  "Q15": {
+    "rows": 55572,
+    "columns": [
+      "family",
+      "date",
+      "Sales",
+      "PriorWeekSales"
+    ]
+  },
+  "Q16": {
+    "rows": 54,
+    "columns": [
+      "store_nbr",
+      "family",
+      "Sales",
+      "rn"
+    ]
+  },
+  "Q17": {
+    "rows": 1,
+    "columns": [
+      "MissingStoreDays"
+    ]
+  },
+  "Q18": {
+    "rows": 90936,
+    "columns": [
+      "date",
+      "store_nbr",
+      "EffectiveHoliday"
+    ]
+  },
+  "Q19": {
+    "rows": 30,
+    "columns": [
+      "id",
+      "date",
+      "store_nbr",
+      "family",
+      "sales",
+      "onpromotion"
+    ]
+  },
+  "Q20": {
+    "rows": 33,
+    "columns": [
+      "family",
+      "MeanDailySales",
+      "DailyStd",
+      "CoefficientVariation"
+    ]
+  }
+}
