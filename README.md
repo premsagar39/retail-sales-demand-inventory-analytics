@@ -1,6 +1,6 @@
 # Retail Demand Forecasting and Inventory Analytics
 
-Analyze recorded grocery sales, compare recursive forecasts out of time, and examine an illustrative service–stock trade-off. The source contains **3,000,888 sales rows**, **54 stores**, **33 product families** and **1,684 observed dates** from January 2013 to August 2017.
+This case study compares forecasts of recorded grocery sales on future time blocks, then uses the forecasts in an illustrative inventory scenario. The source contains **3,000,888 sales rows**, **54 stores**, **33 product families** and **1,684 observed dates** from January 2013 to August 2017.
 
 ![Project overview](reports/figures/project_overview.png)
 

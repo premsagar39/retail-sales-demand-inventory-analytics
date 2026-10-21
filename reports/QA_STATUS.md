@@ -15,4 +15,4 @@
 | Forecast results | Pass | Random Forest pooled WAPE 9.58%; macro-family WAPE 22.12% |
 | Inventory interpretation | Pass | Short, labeled scenario; no real savings or deployment claim |
 | Public GitHub publication | Published | https://github.com/premsagar39/retail-sales-demand-inventory-analytics; original data and cached PBIX excluded |
-| LinkedIn publication | Not published | Draft text only |
+| LinkedIn publication | Published | [Project post](https://www.linkedin.com/feed/update/urn:li:activity:7518476333258182656/); included in LinkedIn Featured |
