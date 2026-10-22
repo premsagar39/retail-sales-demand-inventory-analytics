@@ -1,89 +1,52 @@
 # Retail Demand Forecasting
 
-This case study compares forecasts of recorded grocery sales on future time blocks, then uses the forecasts in an illustrative inventory scenario. The source contains **3,000,888 sales rows**, **54 stores**, **33 product families** and **1,684 observed dates** from January 2013 to August 2017.
+Sales analysis and short-term forecasting using 3,000,888 Favorita records across 54 stores and 33 product families. Forecasts are evaluated on future time blocks before being used in illustrative inventory scenarios.
 
-![Project overview](reports/figures/project_overview.png)
+![Retail Demand Forecasting dashboard](reports/figures/project_overview.png)
 
-## Verified forecast results
+**Python · pandas · scikit-learn · XGBoost · MySQL · Power BI · DAX**
 
-| Measure | Result |
-|---|---:|
+## Forecast results
+
+| Final holdout: 31 July–15 August 2017 | Result |
+| --- | ---: |
 | Selected model | Random Forest |
-| Final holdout | 31 July–15 August 2017 |
 | Pooled WAPE | 9.58% |
 | Macro-family WAPE | 22.12% |
-| MAE per national family-day | 2,415.82 |
 | Seasonal-naive pooled WAPE | 12.82% |
-| Relative pooled WAPE reduction versus seasonal naive | 25.28% |
-| Forward forecasts, 16–31 August 2017 | 528 family-day predictions |
+| MAE per national family-day | 2,415.82 |
 
-The model winner was frozen using two earlier 16-day folds, scored by mean macro-family WAPE. Final holdout results did not select or tune the winner. Four candidates were evaluated: weekly seasonal naive, 28-day moving average, Random Forest and XGBoost. No competition leaderboard submission or production accuracy is claimed.
+The model was selected on two earlier 16-day folds using mean macro-family WAPE. The final holdout was kept separate from model selection. Moving Average, Seasonal Naive, Random Forest and XGBoost were compared.
 
-The pooled improvement is larger than the macro-family improvement. Small categories remain difficult: BOOKS has 242.73% holdout WAPE, and SCHOOL AND OFFICE SUPPLIES has 72.69%. XGBoost has much worse macro-family WAPE despite a competitive pooled score. These differences are preserved in the exports rather than hiding low-volume errors.
+## Analysis
 
-## Business questions and deliverables
+The project covers sales patterns, promotions, seasonality, forecast errors and assumed service–stock trade-offs. Family-level bias and WAPE show where an overall sales-weighted score hides poor performance. Small categories remain difficult: BOOKS has 242.73% holdout WAPE.
 
-- Where do recorded sales concentrate across families, stores, states, weekdays and months?
-- Which promotion patterns merit investigation, without claiming causal uplift?
-- Does a recursive model beat simple baselines on a future block?
-- How does an assumed safety factor change service and stock in a transparent scenario?
+The five-page Power BI report has 26 DAX measures, a dedicated right filter column and bottom navigation. Inventory scenarios use stated lead-time, service-factor and holding-cost assumptions.
 
-The project includes 21 MySQL business queries, Python cleaning and validation, an executed notebook, an offline interactive HTML dashboard, five Power BI pages and 26 DAX measures. Open `reports/Interactive_Dashboard.html` for the browser report or `powerbi/Retail_Demand_Inventory.pbip` for editable Power BI source. Native refresh status is recorded in `reports/QA_STATUS.md`.
+## Explore
 
-## Reproduce
+- [21 SQL analyses](sql/analysis_queries.sql) and [schema](sql/schema.sql)
+- [Executed notebook](notebooks/01_analysis.ipynb) and [forecasting pipeline](src/pipeline.py)
+- [Power BI project](powerbi/Retail_Demand_Inventory.pbip) and [DAX measures](powerbi/measures.dax)
+- [Forecast error review](reports/figures/comparison_review.png)
+- [Model results](data/exports/forecast_metrics.csv), [family errors](data/exports/family_forecast_metrics.csv) and [fold dates](data/exports/fold_dates.csv)
+- [Data dictionary](reports/DATA_DICTIONARY.md), [methodology](reports/DATA_QUALITY.md) and [measure definitions](powerbi/MEASURE_DEFINITIONS.md)
 
-Use Python 3.12 and the versions in `requirements-tested.txt`.
+## Run locally
 
-```text
+Use Python 3.12. Download `train.csv`, `stores.csv`, `transactions.csv` and `holidays_events.csv` from the [Favorita competition](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data). Include `test.csv` for the 528 forward forecasts.
+
+```bash
 pip install -r requirements.txt
-python src/pipeline.py --source-dir PATH_TO_FAVORITA_FILES
+python src/pipeline.py --source-dir "path/to/favorita-files"
 python src/reporting.py
 python src/comparison_analysis.py
 python -m pytest tests -q
 ```
 
-Required source files: `train.csv`, `stores.csv`, `transactions.csv`, `holidays_events.csv`. Add `test.csv` to generate the 16-day forward forecast used in this report. Download from the [original Kaggle source](https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data); exact file hashes and the public data archive used for this build are in `reports/DATA_PROVENANCE.json`. Keep source files local. The archive's holiday file exactly matches the file supplied by the user.
+For MySQL 8, create an empty local database, set `DATABASE_URL` in the environment using `.env.example`, enable LOCAL INFILE and run `python src/database.py`. In Power BI Desktop, open the PBIP, set `DataRoot` to the generated `data/` folder with a trailing slash and refresh. Themes are in `powerbi/themes/`.
 
-For MySQL, create an empty dedicated database, set `DATABASE_URL` using `.env.example`, then run `python src/database.py`. It creates dimensions before facts, rejects populated target tables and load warnings, and exports each query result. No credentials are embedded or committed.
+## Data notes
 
-For Power BI, set `DataRoot` to your local `demand/data/` folder with a trailing slash, then Refresh. Full row data and cached PBIX files are intentionally excluded from the public source package.
-
-## Decisions that affect interpretation
-
-**Missing dates.** The source omits 25 December in 2013, 2014, 2015 and 2016. All observed data is retained for descriptive analysis. Modeling uses the complete 233-day tail from 26 December 2016, so lags refer to actual calendar days. Missing dates are not assumed to be zero demand or verified store closures. This model window supports short-term weekly patterns, not a reliable annual seasonal estimate.
-
-**Forecast scope.** Targets are national daily recorded sales per family, not store-level or item-level demand. Promotion counts are assumed known in the forecast horizon. Holiday exposure counts each affected store once and honors locale and transferred-holiday rules. The store list is used as a fixed exposure universe; opening dates and stock availability are unobserved. Oil is deliberately excluded. Forecasts use recursively predicted history, never future actual target values.
-
-**Quantity and metrics.** Family sales may represent item counts or fractional quantities. Their combined total is a recorded-quantity reporting control, not revenue or interchangeable physical units. Pooled WAPE therefore emphasizes high-quantity families. Macro-family WAPE is also reported, and zero-denominator families yield no WAPE. Sales are not unconstrained demand because stockout availability is unknown.
-
-**Inventory scenario.** Seven-day lead and review periods, three safety factors (0, 1.28, 1.65), forecast-based initial stock and 0.01 assumed holding-cost unit per stock unit-day are scenario inputs. The simulation uses a short 16-day holdout and lost sales; it is not an operational inventory recommendation. Stock and cost comparisons combine family-specific quantities and have no monetary interpretation. No realized savings, deployment or causal business impact is claimed.
-
-## Review the evidence
-
-- `reports/BUSINESS_FINDINGS.md`: conclusions, limitations and follow-up decisions.
-- `data/exports/forecast_metrics.csv` and `family_forecast_metrics.csv`: all model results.
-- `data/exports/fold_dates.csv`: exact training and evaluation boundaries.
-- `data/exports/inventory_scenarios.csv`: assumed service–stock scenarios.
-- `reports/mysql_validation.json`: independent reconciliation.
-- `powerbi/MEASURE_DEFINITIONS.md`: DAX scope and denominators.
-- `notebooks/01_analysis.ipynb`: executed review of generated results.
-
-## Comparison view
-
-![Comparison overview](reports/figures/comparison_review.png)
-
-[Open the comparison dashboard](reports/Comparison_Dashboard.html) after downloading the repository; these comparison charts require an internet connection for Plotly.
-
-Forecast error review adds a focused review page with two contextual measures, a comparison table, chart tooltips and a project-specific theme. Final holdout: 31 Jul-15 Aug 2017; selected model only. Positive bias means overforecasting. Percentages use recorded quantities; no future actuals enter training. SQL Q21 provides the related aggregate analysis. See [enhancement checks](reports/COMPARISON_VALIDATION.md).
-
-Current report: **5 pages, 26 DAX measures and 21 SQL analyses**.
-
-[Report notes](powerbi/REPORT_NOTES.md) contain the date, scope and interpretation details behind the visuals.
-
-## Dashboard layout
-
-Filters occupy a dedicated right column. Analysis pages are reached from the bottom navigation, while view controls stay beside their charts.
-
-## Dashboard controls
-
-The redesigned report adds page navigation, collapsible synchronized filters, metric and ranking views, a contextual tooltip page and a drillthrough detail page. Light and dark themes are included. Display bookmarks preserve filter selections; existing SQL, DAX and imported data are retained. See the [control guide](docs/dashboard-controls.md) and [Power BI source](powerbi/Retail_Demand_Inventory.Report).
+Forecasts target national daily sales by family, using a complete 233-day window to avoid calendar gaps in lag features. Predictions use recursive history; future actual sales do not enter training. Promotion counts are assumed known. Combined sales are recorded quantities, not revenue. Inventory outputs are scenarios, not measured operational savings. See [data provenance](reports/DATA_PROVENANCE.json) for source hashes. Code is covered by [MIT](LICENSE).
